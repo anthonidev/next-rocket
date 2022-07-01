@@ -1,6 +1,7 @@
 import Head from "next/head"
 import React from 'react'
 import Navbar from "../navigation/Navbar"
+import NavContact from "../navigation/NavContact"
 
 type Props = {
     title: string,
@@ -16,6 +17,7 @@ const Layout: React.FC<Props> = ({ title, content, children }) => {
                 <title>{title}</title>
                 <meta name='description' content={content} />
             </Head>
+            <NavContact />
             <Navbar/>
             <main>
                 {children}

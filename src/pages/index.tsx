@@ -11,7 +11,7 @@ const Home: NextPage = () => {
             <h1 className='text-8xl font-mono font-bold'><span className='text-red-500'>Next</span><span className='text-indigo-900'>Rocket</span> </h1>
             <p className='text-2xl'>Creamos páginas web y las posicionamos en Google, para negocios que están listos para crecer. </p>
             <a href='#' className='bg-red-500  py-2 px-5 text-white w-1/2 rounded-2xl mt-5 text-center hover:bg-red-600 border-2 border-red-200 focus:border-red-700'>
-              <span className='text-white text-xl '>Contacto</span>
+              <span className='text-white text-xl '>Contactos</span>
             </a>
 
           </div>
