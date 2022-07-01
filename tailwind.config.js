@@ -12,6 +12,9 @@ module.exports = {
         type: 'type 2.7s ease-out .8s infinite alternate both',
         'type-reverse': 'type 1.8s ease-out 0s infinite alternate-reverse both',
       },
+      backgroundImage: {
+        'hero-cotizador': "url('/assets/images/cotiza.jpg')",
+      },
       keyframes: {
         type: {
           '0%': { width: '0ch' },

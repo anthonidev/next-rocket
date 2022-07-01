@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout';
 const Home: NextPage = () => {
   return (
     <Layout title="Next Rocket" content="Next Rocket Peru es una empresa">
-      <header className=" max-w-7xl h-screen mx-auto ">
+      <header className=" max-w-7xl  mx-auto ">
         <div className='flex  md:flex-row flex-col justify-center items-center h-full'>
           <div className='px-4 py-2  max-w-lg flex flex-col '>
             <h1 className='text-8xl font-mono font-bold'><span className='text-red-500'>Next</span><span className='text-indigo-900'>Rocket</span> </h1>
