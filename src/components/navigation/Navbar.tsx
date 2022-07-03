@@ -1,13 +1,24 @@
 import { useTheme } from 'next-themes';
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline';
 import { Menu, Popover, Transition } from '@headlessui/react'
 import Link from 'next/link';
+import { AppDispatch, RootState } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { getServices } from '../../redux/api/service';
 const Navbar = () => {
     const { theme, setTheme } = useTheme();
     const changeTheme = () => {
         setTheme(theme === "light" ? "dark" : "light")
     }
+    const dispatch: AppDispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getServices())
+    }, [dispatch])
+    const services = useSelector((state: RootState) => state.service.services);
+
+
+
     return (
         <nav >
             <ul className='flex justify-between max-w-7xl mx-auto py-2 px-3'>
@@ -31,16 +42,23 @@ const Navbar = () => {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className={`absolute flex flex-col right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}>
-                                <Menu.Item>
-                                    <a href='#'>Servicio 1</a>
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <a href='#'>Servicio 2</a>
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <a href='#'>Servicio 3</a>
-                                </Menu.Item>
+                            <Menu.Items
+                                className={`dark:bg-gray-700 py-3 px-5 absolute 
+                             flex flex-col -right-20 mt-2 w-56 origin-top-right
+                              rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}>
+                                {
+                                    services?.map((service) => {
+                                        return (
+                                            <Menu.Item key={service.id} as="div" className="my-2">
+                                                <Link href={`/service/${service.slug}`} key={service.id}>
+                                                    <a className='  '>{service.name}</a>
+                                                </Link>
+                                            </Menu.Item>
+                                        )
+                                    })
+                                }
+
+
                             </Menu.Items>
                         </Transition>
                     </Menu>
