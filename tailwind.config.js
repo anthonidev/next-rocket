@@ -6,7 +6,21 @@ module.exports = {
     "./src/components/**/*.{ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'chakra': ['Chakra Petch'],
+      'roboto': ['Roboto'],
+    },
+
     extend: {
+      colors: {
+        dark: {
+          DEFAULT: "#0A192F",
+          100: "#112D3D",
+          200: "#133040",
+          300: "#112240",
+          400: "#326D7F",
+        },
+      },
       animation: {
         cursor: 'cursor .6s linear infinite alternate',
         type: 'type 2.7s ease-out .8s infinite alternate both',

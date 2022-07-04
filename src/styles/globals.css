@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family:  'Chakra Petch', system-ui, sans-serif;
+   
+  }
+}
+
+
 .cursor::after {
     display: block;
     content: '';
@@ -24,3 +32,4 @@
       opacity: 0;
     }
   }
+

@@ -19,7 +19,7 @@ const Layout: React.FC<Props> = ({ title, content, children }) => {
             </Head>
             <NavContact />
             <Navbar/>
-            <main>
+            <main >
                 {children}
             </main>
         </>

@@ -31,7 +31,7 @@ export const {
     get_services,
     fail_services,
     get_service,
-fail_service
+    fail_service
 } = serviceSlice.actions
 
 
@@ -47,7 +47,7 @@ export interface ServiceState {
 export interface ServiceDetail {
     id: number
     name: string
-    title:string
+    title: string
     description: string
     slug: string
     plans: Plan[]
@@ -79,13 +79,14 @@ export interface Plan {
     name: string
     title: string
     description: string
-    subtitle:string
+    subtitle: string
     price: number
     compare_price: number
     renovation_price: number
     photo: string
     slug: string
     features: Feature[]
+    is_recomented: string
 }
 
 export interface Feature {
