@@ -60,6 +60,7 @@ export interface Benefit {
     id: number
     title: string
     subtitle: string
+    image:string
 }
 
 export interface FuncService {
