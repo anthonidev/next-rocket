@@ -1,5 +1,6 @@
 import Head from "next/head"
 import React from 'react'
+import Footer from "../navigation/Footer"
 import Navbar from "../navigation/Navbar"
 import NavContact from "../navigation/NavContact"
 
@@ -22,6 +23,7 @@ const Layout: React.FC<Props> = ({ title, content, children }) => {
             <main >
                 {children}
             </main>
+            <Footer/>
         </>
     )
 }
