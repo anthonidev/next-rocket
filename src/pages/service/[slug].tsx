@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../../components/layout/Layout';
 import Benefits from '../../components/service/Benefits';
 import Functionalities from '../../components/service/Functionalities';
+import NRPlan from '../../components/service/NRPlan';
 import Planes from '../../components/service/Planes';
 import { getService } from '../../redux/api/service';
 import { AppDispatch, RootState } from '../../redux/store';
@@ -73,9 +74,11 @@ const Service = () => {
                 {
                     service && <Functionalities func_services={service.func_services} title={service.name} />
                 }
+                {
+                    <NRPlan />
+                }
 
 
-               
             </div>
         </Layout>
     )
