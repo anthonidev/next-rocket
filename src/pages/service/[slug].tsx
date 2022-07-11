@@ -1,5 +1,3 @@
-import { Disclosure } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -12,7 +10,6 @@ import NRPlan from '../../components/service/NRPlan';
 import Planes from '../../components/service/Planes';
 import { getService } from '../../redux/api/service';
 import { AppDispatch, RootState } from '../../redux/store';
-import { formatterSoles } from '../../utils/helpers/formatSoles';
 
 const Service = () => {
     const router = useRouter()

@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import { fail_service, fail_services, get_service, get_services } from '../slice/serviceSlice';
+import {  fail_service, fail_services,  get_service, get_services } from '../slice/serviceSlice';
 import { AppDispatch } from '../store';
 
 export const getServices = () => async (dispatch: AppDispatch) => {
@@ -34,3 +34,4 @@ export const getService = (slug: string|string[]) => async (dispatch: AppDispatc
     }
     );
 }
+

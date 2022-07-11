@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 const initialState: ServiceState = {
     services: null,
-    service: null
+    service: null,
+
 }
 
 export const serviceSlice = createSlice({
@@ -20,10 +21,9 @@ export const serviceSlice = createSlice({
         },
         fail_service: (state: ServiceState, action: PayloadAction<string>) => {
             state.service = null;
-        }
-
-
-
+        },
+       
+        
     }
 });
 
@@ -31,7 +31,8 @@ export const {
     get_services,
     fail_services,
     get_service,
-    fail_service
+    fail_service,
+ 
 } = serviceSlice.actions
 
 
