@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { AppDispatch, RootState } from '../../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { getServices } from '../../redux/api/service';
+import { useRouter } from 'next/router';
 const Navbar = () => {
     const { theme, setTheme } = useTheme();
     const changeTheme = () => {
@@ -16,8 +17,8 @@ const Navbar = () => {
         dispatch(getServices())
     }, [dispatch])
     const services = useSelector((state: RootState) => state.service.services);
-
-
+    const { pathname } = useRouter()
+    console.log(pathname);
 
     return (
         <nav className=' sticky top-0 z-30 bg-white dark:bg-dark' >
@@ -32,9 +33,12 @@ const Navbar = () => {
                 </li>
 
                 <li className='md:flex justify-between items-center space-x-10 text-indigo-800 font-semibold text-lg hidden dark:text-indigo-100 '>
-                    <a className='hover:text-red-500 border-b-2 border-transparent hover:border-red-500 hover:border-b-2 '>Inico</a>
+                    <Link href='/'>
+                        <a className={`hover:text-red-500 border-b-2 border-transparent hover:border-red-500 hover:border-b-2 focus:outline-none ${pathname === '/' && 'border-red-500 text-red-500'}`}>Inico</a>
+                    </Link>
+
                     <Menu as={'div'} className='relative '>
-                        <Menu.Button className='hover:text-red-500 border-b-2 border-transparent hover:border-red-500 hover:border-b-2 '>Servicios</Menu.Button>
+                        <Menu.Button className={`hover:text-red-500 border-b-2 border-transparent hover:border-red-500 hover:border-b-2 focus:outline-none ${pathname === '/service/[slug]' && 'border-red-500 text-red-500'}`}>Servicios</Menu.Button>
                         <Transition
                             as={Fragment}
                             enter="transition ease-out duration-100"
@@ -45,15 +49,15 @@ const Navbar = () => {
                             leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items
-                                className={`dark:bg-gray-700 py-3 px-5 absolute 
+                                className={`dark:bg-dark-100 py-3 px-5 absolute 
                              flex flex-col -right-20 mt-2 w-56 origin-top-right
                               rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}>
                                 {
                                     services?.map((service) => {
                                         return (
-                                            <Menu.Item key={service.id} as="div" className="my-2">
+                                            <Menu.Item key={service.id} as="div" className="my-2 flex flex-col space-y-3  items-center">
                                                 <Link href={`/service/${service.slug}`} key={service.id}>
-                                                    <a className='  '>{service.name}</a>
+                                                    <a className=' hover:text-red-500 focus:outline-none tracking-wider hover:bg-red-50 dark:hover:bg-dark py-2 px-3 rounded'>{service.name}</a>
                                                 </Link>
                                             </Menu.Item>
                                         )

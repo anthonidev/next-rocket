@@ -4,7 +4,6 @@ import { Feature, Plan } from '../../redux/slice/serviceSlice'
 import { formatterSoles } from '../../utils/helpers/formatSoles'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-
 const PlanDetail: FunctionComponent<{
     plan: Plan,
 }> = ({ plan }) => {
@@ -89,7 +88,6 @@ const PlanDetail: FunctionComponent<{
                     >
                         <div className="fixed inset-0 bg-black bg-opacity-50" />
                     </Transition.Child>
-
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
                             <Transition.Child
@@ -126,9 +124,8 @@ const PlanDetail: FunctionComponent<{
                                             <span className="mb-1">Message</span>
                                             <textarea rows={3} className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-indigo-400 dark:bg-gray-800" data-dashlane-rid="043824808b5a6b01" data-form-type="other"></textarea>
                                         </label>
-                                        <button type="button"  onClick={closeModal} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-indigo-400 dark:text-gray-900 focus:ring-indigo-400 hover:ring-indigo-400" data-dashlane-label="true" data-dashlane-rid="34a77a8d545ba77b" data-form-type="action">Submit</button>
+                                        <button type="button" onClick={closeModal} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-indigo-400 dark:text-gray-900 focus:ring-indigo-400 hover:ring-indigo-400" data-dashlane-label="true" data-dashlane-rid="34a77a8d545ba77b" data-form-type="action">Submit</button>
                                     </form>
-                                   
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
